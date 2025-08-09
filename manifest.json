@@ -2,7 +2,7 @@
   "name": "GAA Referee Calculator",
   "short_name": "GAA Calc",
   "description": "Calculate match end times from Strava data for GAA referee reports",
-  "start_url": "/",
+  "start_url": "/gaa-referee-calculator/",
   "display": "standalone",
   "background_color": "#2E8B57",
   "theme_color": "#2E8B57",
