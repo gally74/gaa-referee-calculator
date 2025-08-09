@@ -1,0 +1,361 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(135deg, #2E8B57 0%, #228B22 100%);
+    min-height: 100vh;
+    color: #333;
+}
+
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    color: white;
+    font-size: 1.8rem;
+    font-weight: 600;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.subtitle {
+    color: rgba(255,255,255,0.9);
+    font-size: 0.9rem;
+    margin-top: 8px;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+.calculator-section {
+    background: white;
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.calculator-section h3 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333;
+    font-size: 0.95rem;
+}
+
+.input-group small {
+    display: block;
+    margin-top: 4px;
+    color: #666;
+    font-size: 0.8rem;
+}
+
+.time-input, .number-input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-variant-numeric: tabular-nums;
+    transition: border-color 0.2s ease;
+}
+
+.time-input:focus, .number-input:focus {
+    outline: none;
+    border-color: #2E8B57;
+    box-shadow: 0 0 0 3px rgba(46, 139, 87, 0.1);
+}
+
+.number-input {
+    text-align: center;
+}
+
+.current-time {
+    text-align: center;
+    margin-bottom: 24px;
+    font-size: 2rem;
+    font-weight: 300;
+    color: #666;
+    font-variant-numeric: tabular-nums;
+}
+
+.match-controls {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.btn {
+    flex: 1;
+    padding: 16px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn:active {
+    transform: translateY(1px);
+}
+
+.btn-start {
+    background: #28a745;
+    color: white;
+}
+
+.btn-start:hover:not(:disabled) {
+    background: #218838;
+}
+
+.btn-end {
+    background: #dc3545;
+    color: white;
+}
+
+.btn-end:hover:not(:disabled) {
+    background: #c82333;
+}
+
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.match-info {
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+.time-display {
+    margin-bottom: 20px;
+}
+
+.time-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.time-item:last-child {
+    border-bottom: none;
+}
+
+.time-item label {
+    font-weight: 600;
+    color: #666;
+}
+
+.time-item span {
+    font-size: 1.1rem;
+    font-weight: 500;
+    font-variant-numeric: tabular-nums;
+    color: #333;
+}
+
+.match-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.btn-secondary {
+    background: #6c757d;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: #5a6268;
+}
+
+.btn-copy {
+    background: #007bff;
+    color: white;
+}
+
+.btn-copy:hover {
+    background: #0056b3;
+}
+
+.btn-calculate {
+    background: #2E8B57;
+    color: white;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.btn-calculate:hover {
+    background: #228B22;
+}
+
+.result-section {
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+.result-display {
+    margin-bottom: 20px;
+}
+
+.result-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.result-item:last-child {
+    border-bottom: none;
+}
+
+.result-item label {
+    font-weight: 600;
+    color: #666;
+}
+
+.result-item span {
+    font-size: 1.1rem;
+    font-weight: 500;
+    font-variant-numeric: tabular-nums;
+    color: #333;
+}
+
+.highlight {
+    color: #2E8B57 !important;
+    font-weight: 700 !important;
+    font-size: 1.2rem !important;
+}
+
+.result-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.recent-calculations {
+    background: white;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.recent-calculations h3 {
+    margin-bottom: 16px;
+    color: #333;
+    font-size: 1.2rem;
+}
+
+.calculations-list {
+    margin-bottom: 16px;
+}
+
+.calculation-item {
+    padding: 12px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    background: #fafafa;
+}
+
+.calculation-item:last-child {
+    margin-bottom: 0;
+}
+
+.calculation-date {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 4px;
+}
+
+.calculation-times {
+    font-size: 0.95rem;
+    color: #333;
+    font-variant-numeric: tabular-nums;
+}
+
+.calculation-end-time {
+    font-weight: 600;
+    color: #2E8B57;
+}
+
+.btn-small {
+    background: #6c757d;
+    color: white;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    width: 100%;
+}
+
+.btn-small:hover {
+    background: #5a6268;
+}
+
+.empty-state {
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    padding: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .container {
+        padding: 16px;
+    }
+    
+    .timer-section {
+        padding: 20px;
+    }
+    
+    .current-time {
+        font-size: 1.8rem;
+    }
+    
+    .btn {
+        padding: 14px;
+        font-size: 1rem;
+    }
+}
+
+/* PWA specific styles */
+@media (display-mode: standalone) {
+    body {
+        padding-top: env(safe-area-inset-top);
+    }
+}
+
+/* Animation for successful actions */
+.btn-success-flash {
+    animation: successFlash 0.3s ease;
+}
+
+@keyframes successFlash {
+    0% { background-color: inherit; }
+    50% { background-color: #28a745; }
+    100% { background-color: inherit; }
+}

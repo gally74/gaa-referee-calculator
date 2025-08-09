@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAA Referee Calculator</title>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2E8B57">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="GAA Calc">
+    <link rel="apple-touch-icon" href="icon-192x192.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🏐 GAA Referee Calculator</h1>
+            <p class="subtitle">Calculate match end times from Strava data</p>
+        </header>
+
+        <main>
+            <div class="calculator-section">
+                <h3>From Strava Activity</h3>
+                
+                <div class="input-group">
+                    <label for="start-time-input">Match Start Time</label>
+                    <input type="time" id="start-time-input" class="time-input">
+                    <small>From your Strava activity start time</small>
+                </div>
+
+                <div class="input-group">
+                    <label for="elapsed-hours">Elapsed Time (Hours)</label>
+                    <input type="number" id="elapsed-hours" class="number-input" min="0" max="5" value="1" placeholder="1">
+                </div>
+
+                <div class="input-group">
+                    <label for="elapsed-minutes">Elapsed Time (Minutes)</label>
+                    <input type="number" id="elapsed-minutes" class="number-input" min="0" max="59" value="15" placeholder="15">
+                </div>
+
+                <div class="input-group">
+                    <label for="elapsed-seconds">Elapsed Time (Seconds)</label>
+                    <input type="number" id="elapsed-seconds" class="number-input" min="0" max="59" value="0" placeholder="0">
+                </div>
+
+                <button id="calculate-btn" class="btn btn-calculate">Calculate End Time</button>
+
+                <div class="result-section" id="result-section" style="display: none;">
+                    <div class="result-display">
+                        <div class="result-item">
+                            <label>Match Started:</label>
+                            <span id="result-start-time">--:--</span>
+                        </div>
+                        <div class="result-item">
+                            <label>Match Ended:</label>
+                            <span id="result-end-time" class="highlight">--:--</span>
+                        </div>
+                        <div class="result-item">
+                            <label>Total Duration:</label>
+                            <span id="result-duration">--:--:--</span>
+                        </div>
+                    </div>
+                    
+                    <div class="result-actions">
+                        <button id="copy-result-btn" class="btn btn-copy">Copy for Report</button>
+                        <button id="save-calculation-btn" class="btn btn-secondary">Save Calculation</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recent-calculations">
+                <h3>Recent Calculations</h3>
+                <div id="calculations-list" class="calculations-list">
+                    <!-- Recent calculations will be populated here -->
+                </div>
+                <button id="clear-calculations" class="btn btn-small">Clear History</button>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
